@@ -3,6 +3,7 @@ This is the project for the fourth semester of the CSN232 course
 
 Shambhoolal Nawaria 
 21114095
+
 Question
 The reader-writer problem is a classic synchronization problem in computer 
 science, where multiple process execution (or thread) competes for shared 
@@ -31,6 +32,7 @@ waiting, writers access the critical section.
 
 
 **How this solution solves starvation problems?**
+
 We consider the scenario that when readers first go for critical, which first 
 check writing || waitWriters && !reaadersTurn condition initially is the whole 
 condition is false then go to for critical condition and read then when writers 
