@@ -1,0 +1,48 @@
+                                   reader - writer - problem - solution (pseudocode)
+
+class solution
+{
+    int readers = 0;
+    bool writing = false;
+    waitWriters = 0;
+    readersTurn = false;
+
+    getRead()
+    {
+        while (writing || waitWriters > 0 && !readersTurn)
+        {
+            wait();
+        }
+        readers++;
+    }
+
+    // critical section-reading
+
+    freeread()
+    {
+        readers--;
+        readersTurn = false;
+        if (readers == 0)
+            informAll();
+    }
+
+    getWrite
+    {
+        while (readers > 0 || writing)
+        {
+            waitWriting++;
+            wait();
+        }
+        waitWriters--;
+        writing = true;
+    }
+
+    // critical section-writing 
+
+    freeWrite()
+    {
+        writing = false;
+        readersTurn = true;
+        informAll();
+    }
+}
